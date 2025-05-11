@@ -1,0 +1,27 @@
+{
+  "name": "mern-employees",
+  "version": "1.0.0",
+  "description": "MERN employees list",
+  "keywords": [
+    "mern",
+    "exprees",
+    "react"
+  ],
+  "license": "ISC",
+  "author": "Juraev Boburjon",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
