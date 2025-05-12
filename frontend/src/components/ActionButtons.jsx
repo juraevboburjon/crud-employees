@@ -1,16 +1,15 @@
 import axios from "axios";
 import React from "react";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 function ActionButtons({ host, employee, setEmployees }) {
-  const editUser = (employee) => {
-    console.log("Edit clicked button" + employee);
-  };
-
   const deleteUser = async (id) => {
     await axios.delete(`${host}/delete/user/${id}`).then((res) => {
       setEmployees((prevEmployee) =>
         prevEmployee.filter((employee) => employee._id !== id)
       );
+      toast.success(res.data.message, { position: "top-center" });
     });
   };
 
@@ -49,12 +48,11 @@ function ActionButtons({ host, employee, setEmployees }) {
   );
   return (
     <div className="flex justify-around items-cente ">
-      <button
-        onClick={editUser}
-        className="text-gray-100 cursor-pointer p-2 rounded-4xl bg-green-700"
-      >
-        {editIcon}
-      </button>
+      <Link to={`update/${employee._id}`}>
+        <button className="text-gray-100 cursor-pointer p-2 rounded-4xl bg-green-700">
+          {editIcon}
+        </button>
+      </Link>
       <button
         onClick={() => deleteUser(employee._id)}
         className="text-gray-100 cursor-pointer p-2 rounded-4xl bg-red-700"
