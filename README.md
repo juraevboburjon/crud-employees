@@ -20,10 +20,6 @@
 
 ![alt text](/img/delete.png)
 
-## ℹ️ Overview
-
-A paragraph explaining your work, who you are, and why you made it.
-
 ### 🛠️ Technologies Used
 
 Frontend: React, ReactHotToast, TailwindCSS for UI components
