@@ -17,7 +17,7 @@ function Home() {
       }
     };
     fetchData();
-  }, []);
+  }, [host]);
 
   const addIcon = (
     <svg
@@ -39,9 +39,9 @@ function Home() {
   return (
     <div className=" flex flex-col w-full h-screen justify-center items-center">
       <div className="flex w-[80%] h-9 justify-between items-center">
-        <h1>Employees list</h1>
-        <Link to={"/add"}>
-          <button className="bg-blue-600 cursor-pointer p-2">
+        <h1 className="text-2xl pb-8 font-bold">Employees list</h1>
+        <Link to={"/add"} className="flex pb-8">
+          <button className=" flex text-white items-center justify-center bg-blue-600 w-40 h-10 rounded-xl cursor-pointer">
             {addIcon} Add Employee
           </button>
         </Link>
@@ -61,7 +61,7 @@ function Home() {
             {employees.map((employee, index) => {
               return (
                 <tr key={index}>
-                  <td className="border border-white rounded-md px-2 py-5">
+                  <td className="border text-center border-white rounded-md px-2 py-5">
                     {index + 1}
                   </td>
                   <td className="border border-white rounded-md px-2 py-5">
